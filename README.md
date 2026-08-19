@@ -1,6 +1,6 @@
 # 八宝粥的多MC服务端管理面板（BBZ MCServers Manager）
 
-> ⚠️ **开发已暂停** —— 本仓库仅存档源码，不再继续维护，请使用下面介绍的重写版本。
+> ⚠️ **开发已暂停** —— 本仓库仅存档源码，不再继续维护。下一代基于 C# 重写的项目 **Prime-Minecraft-Servers-Engine（PMCSsE）仍在开发中、尚未稳定可用**，详见下文。
 
 这是一个用于管理多个 Minecraft 服务端的图形化工具（WinForms / VB.NET）。它通过 **RCON** 远程控制 MC 服务端、通过 **SFTP** 上传/下载文件，并使用 **7z** 进行备份/回档，可同时管理多台机器上的多个服务端实例。
 
@@ -36,22 +36,36 @@ BBZ_MCServers_Manager\  主工程源码（VB.NET / WinForms，.NET 8）
 
 因此**已暂停对本仓库的开发**，并决定基于原功能用更现代、更清晰的语言 **C#** 从头重写。
 
-## ✅ 请使用新项目（推荐）
+## ✅ 下一代项目：Prime-Minecraft-Servers-Engine（PMCSsE）
 
-新的、由 C# 重写且持续维护的版本：
+本工具已决定基于原功能用更现代、更清晰的语言 **C#** 从头重写，新项目为：
 
-### 🔗 [Prime-Minecraft-Servers-Engine](https://github.com/babaozhouO/Prime-Minecraft-Servers-Engine)
+### 🔗 [Prime-Minecraft-Servers-Engine](https://github.com/babaozhouO/Prime-Minecraft-Servers-Engine)（[使用文档](https://babaozhouo.github.io/Prime-Minecraft-Servers-Engine/)）
 
-该新项目以 **C# / .NET** 重写了本工具的核心能力，具备：
+> ⚠️ **注意**：该项目**仍在开发中，未经严格稳定性测试**，且采用**前后端分离**架构——在前后端通信完成之前，已实现的功能还**无法使用**。请**谨慎使用**，只建议使用**正式发布版本**。
 
-- 更清晰的模块化架构与规范命名，便于阅读和维护；
-- 更完善的异步处理，界面不再卡顿；
-- 同一套 RCON / SFTP / 7z 备份回档能力，且更易扩展；
-- 面向长期演进的工程结构，欢迎贡献与反馈。
+**项目概览**（源自新项目 README，进度以线上仓库为准）：
 
-> 如果你需要使用 Minecraft 服务端管理工具，请优先前往
+| 组件 | 技术栈 | 平台 | 状态 |
+|------|--------|------|------|
+| 后端 | .NET 10.0 | Windows / Linux / macOS | 开发中（~20%） |
+| 前端 | Avalonia（MVVM+事件驱动） | Win10/11、Linux、macOS、iOS、Android | 开发中（~15%） |
+| 前端 | WPF（事件驱动） | Windows 10/11 | 停更 |
+| [Yuzu 前端（第三方）](https://github.com/LLP773/PMCSsE_Yuzu-Frontend) | Avalonia（MVVM+事件驱动） | 多平台 | 第三方维护 |
+
+**已实现 / 规划中的功能**：
+
+- 托管（多个）服务端，快速启停、查看日志、命令输入 —— ✔
+- 服内外互联系统（无需 QQ 机器人，稳定易用）—— ✔
+- 全量备份 —— ✔
+- 发送文件至 SFTP 文件服务器 —— 90%
+- 快速打开服务端目录 / 模组 / 插件文件夹等 —— 30%
+- 前后端通信 —— 80%
+- 自动下载并部署服务端、资源监控、玩家列表、文件级/块级增量备份、智能命令补全等 —— 规划中
+
+> 若你希望使用或参与下一代工具，请前往
 > **[Prime-Minecraft-Servers-Engine](https://github.com/babaozhouO/Prime-Minecraft-Servers-Engine)**。
-> 本仓库仅供归档历史版本使用。
+> **本仓库仅供归档历史版本使用，不再维护。**
 
 ## 许可
 
